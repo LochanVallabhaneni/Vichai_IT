@@ -1,0 +1,51 @@
+/* ViPledge commitment cards and outcomes */
+
+.pledge-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 20px;
+  margin: 36px 0;
+}
+
+.pledge-card {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 26px;
+  background: var(--surf);
+}
+
+.outcomes {
+  border-top: 1px solid var(--line);
+  padding-top: 36px;
+}
+
+.outcomes h3 {
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.outcomes-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 28px;
+}
+
+.outcomes-grid p {
+  color: var(--mut);
+  margin: 0;
+}
+
+.outcomes-grid b {
+  display: block;
+  font: 700 1rem Sora;
+  color: var(--blue);
+  margin-bottom: 6px;
+}
+
+@media (max-width:900px) {
+  .pledge-grid,
+  .outcomes-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,136 @@
+/* Top navigation and logo */
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding-top: env(safe-area-inset-top,0px);
+  transition: background .3s,border-color .3s;
+  border-bottom: 1px solid transparent;
+}
+
+.navbar.is-scrolled {
+  background: color-mix(in srgb,var(--bg) 90%,transparent);
+  backdrop-filter: blur(12px);
+  border-color: var(--line);
+}
+
+.navbar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 68px;
+}
+
+.logo {
+  font: 700 1.2rem Sora;
+  letter-spacing: .16em;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--ink);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: .95rem;
+  color: var(--mut);
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+}
+
+.nav-links .btn {
+  padding: 9px 18px;
+  color: var(--bg);
+}
+
+.nav-links .btn:hover {
+  color: var(--bg);
+}
+
+.icon-button {
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--ink);
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  font-size: 1.05rem;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.logo-mark {
+  display: block;
+  width: auto;
+  border-radius: 8px;
+}
+
+.logo {
+  padding: 0;
+  gap: 12px;
+}
+
+.logo-name {
+  font: 700 1.45rem Sora,sans-serif;
+  letter-spacing: .14em;
+}
+
+@media (max-width:900px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: 68px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    padding: 6px 20px 22px;
+    transform: translateY(-130%);
+    transition: transform .35s;
+    visibility: hidden;
+  }
+
+  .nav-links.is-open {
+    transform: none;
+    visibility: visible;
+  }
+
+  .nav-links a {
+    padding: 14px 4px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav-links .btn {
+    text-align: center;
+    margin-top: 16px;
+    border: 0;
+  }
+}
+
+.navbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}

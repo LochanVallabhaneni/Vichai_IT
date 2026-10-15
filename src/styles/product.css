@@ -1,0 +1,169 @@
+/* Progov product section and admin console preview */
+
+.product {
+  background: var(--surf);
+  border-block: 1px solid var(--line);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.feature-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+  margin-top: 28px;
+}
+
+.feature-columns h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--blue);
+}
+
+.tech-note {
+  margin-top: 28px;
+  padding: 16px 20px;
+  border: 1px dashed var(--line);
+  border-radius: 12px;
+}
+
+.console {
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  position: sticky;
+  top: 90px;
+}
+
+.console-header {
+  display: flex;
+  gap: 6px;
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--line);
+}
+
+.console-header i {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--line);
+}
+
+.console-body {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  min-height: 290px;
+}
+
+.console-sidebar {
+  border-right: 1px solid var(--line);
+  padding: 14px 10px;
+  display: grid;
+  gap: 10px;
+  align-content: start;
+}
+
+.console-sidebar b {
+  height: 8px;
+  border-radius: 4px;
+  background: var(--line);
+}
+
+.console-sidebar b:first-child {
+  background: var(--blue);
+}
+
+.console-main {
+  padding: 16px;
+}
+
+.console-title {
+  font: 700 .9rem Sora;
+  margin-bottom: 12px;
+}
+
+.flow {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.flow-step {
+  font-size: .78rem;
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+  color: var(--mut);
+}
+
+.flow-step.is-active {
+  border-color: var(--blue);
+  color: var(--blue);
+}
+
+.flow-arrow {
+  color: var(--mut);
+}
+
+.chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+  height: 110px;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 4px 4px 0 0;
+  background: var(--blue);
+  opacity: .85;
+  transform-origin: bottom;
+  animation: grow-bar 3.6s ease-in-out infinite alternate;
+}
+
+.bar:nth-child(2n) {
+  animation-delay: .4s;
+}
+
+.bar:nth-child(3n) {
+  animation-delay: .9s;
+}
+
+@keyframes grow-bar {
+  from {
+    transform: scaleY(.55);
+  }
+
+  to {
+    transform: scaleY(1);
+  }
+}
+
+.console-caption {
+  font-size: .78rem;
+  color: var(--mut);
+  margin-top: 8px;
+}
+
+@media (max-width:900px) {
+  .product-grid,
+  .feature-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .console {
+    position: static;
+  }
+}
+
+.tech-note h4 {
+  font-size: 0.95rem;
+}

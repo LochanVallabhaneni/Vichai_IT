@@ -1,0 +1,145 @@
+/* Design tokens, reset, typography, buttons, scroll reveal */
+
+:root {
+  --bg: #fafaf9;
+  --surf: #fff;
+  --ink: #141414;
+  --mut: #6b6b66;
+  --line: #e7e6e2;
+  --blue: #1f5c4a;
+  --sky: #9dbfb3;
+  --brass: #1f5c4a;
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top,0px);
+  padding-bottom: env(safe-area-inset-bottom,0px);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font: 400 17px/1.65 "Source Sans 3",system-ui,sans-serif;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Sora,system-ui,sans-serif;
+  font-weight: 500;
+  line-height: 1.15;
+  margin: 0 0 .5em;
+  letter-spacing: -.02em;
+}
+
+h2 {
+  font-size: clamp(1.7rem,3.6vw,2.4rem);
+}
+
+h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+p {
+  margin: 0 0 1em;
+}
+
+a {
+  color: inherit;
+}
+
+.container {
+  width: min(1120px,100% - 40px);
+  margin: 0 auto;
+}
+
+section {
+  padding: clamp(64px,10vw,120px) 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.muted {
+  color: var(--mut);
+}
+
+.lead {
+  font-size: 1.15rem;
+  max-width: 60ch;
+  color: var(--mut);
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font: 700 .93rem Sora,sans-serif;
+  text-decoration: none;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: opacity .2s,background .2s;
+}
+
+.btn:hover {
+  opacity: .82;
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: var(--bg);
+}
+
+.btn-ghost {
+  border-color: var(--line);
+  color: var(--ink);
+}
+
+.btn-ghost:hover {
+  background: var(--surf);
+  opacity: 1;
+}
+
+.reveal {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity .6s,transform .6s;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion:reduce) {
+  .orbit-ring,
+  .orbit-node,
+  .pulse,
+  .bar {
+    animation: none!important;
+  }
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+
+  html {
+    scroll-behavior: auto;
+  }
+}
